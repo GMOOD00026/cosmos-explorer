@@ -14,7 +14,11 @@ export default function FormularioContacto() {
     setEstado('')
 
     try {
-      const API = import.meta.env.VITE_API_URL || 'http://localhost:3001'
+      
+const API = import.meta.env.PROD
+  ? 'https://cosmos-explorer-8v67.onrender.com'
+  : 'http://localhost:3001'
+
 
       const respuesta = await fetch(`${API}/api/contacto`, {
         method: 'POST',
