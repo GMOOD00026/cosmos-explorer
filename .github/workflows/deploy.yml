@@ -36,8 +36,12 @@ jobs:
       - name: Instalar dependencias
         run: npm ci
 
+
       - name: Compilar React
         run: npm run build -- --base=/cosmos-explorer/
+        env:
+          VITE_API_URL: https://cosmos-explorer-8v67.onrender.com
+
 
       - name: Configurar GitHub Pages
         uses: actions/configure-pages@v5
